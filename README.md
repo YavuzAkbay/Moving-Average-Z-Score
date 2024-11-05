@@ -1,25 +1,120 @@
-# Moving Average Z Score
+# 📈 Moving Average Z-Score Analysis Suite
 
-![image](https://github.com/user-attachments/assets/d20912fb-b7f0-4b81-86b4-6fdaf7ea8099)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+![Python](https://img.shields.io/badge/Python-3.7%2B-blue)
 
-This project provides a Python-based tool for financial analysis that combines the calculation of various Moving Averages (MAs) with Z-Score analysis to detect potential market divergences. It leverages yfinance for fetching historical stock price data and uses popular techniques from quantitative finance to aid in the detection of market trends and reversals.
+A Python tool for technical analysis using Moving Average Z-Score with divergence detection.
 
-<h3 align="left">Features</h3>
-* Calculate Multiple Types of Moving Averages: SMA, WMA, EMA, HMA
-* Z-Score Calculation: Computes the Z-Score for a given moving average to standardize the data, providing insight into price deviations from the average.
-* Divergence Detection: Identifies potential bullish and bearish divergences based on Z-Score behavior, which could indicate upcoming market reversals.
-* Visual Representation: Plots the stock price and corresponding Z-Score, highlighting detected divergences, to facilitate quick analysis.
+## 🚀 Features
 
-<h3 align="left">Applications in Financial Analysis</h3>
-* Trend Identification: Moving averages help in identifying the direction of the trend. By applying Z-Score analysis, traders can better assess when the price is deviating significantly from the trend.
-* Divergence Detection: Divergences between the Z-Score and price can indicate potential reversals, making this tool valuable for spotting early entry or exit points.
-* Volatility Measurement: Z-Score also serves as a measure of price volatility relative to the moving average, helping traders to assess the risk level of their positions.
-* Quantitative Strategy Development: This tool provides a foundation for building more sophisticated trading strategies that can be backtested and optimized for different market conditions.
+- 📊 Multiple Moving Average types (SMA, Hull, EMA, WMA)
+- 📉 Z-Score calculation and analysis
+- 🎯 Automatic divergence detection
+- 📈 Interactive visualization
+- 💹 Support for stocks and cryptocurrencies
 
-<h3 align="left">Dependencies</h3>
-* Python 3.7+
-* yfinance
-* pandas
-* numpy
-* matplotlib
+## 📋 Prerequisites
 
+Before running the script, ensure you have Python 3.7+ installed on your system.
+
+## 🔧 Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/ma-zscore-analysis.git
+cd ma-zscore-analysis
+```
+
+2. Install required packages
+```bash
+pip install -r requirements.txt
+```
+
+## 💻 Usage
+
+Basic usage:
+```python
+from ma_zscore_analysis import MAZScoreAnalyzer
+
+# Create analyzer instance
+analyzer = MAZScoreAnalyzer(
+    ticker="BTC-USD",
+    ma_type="Hull",
+    period=50,
+    z_score_lookback=30
+)
+
+# Run analysis
+analyzer.run_analysis()
+```
+
+Advanced usage:
+```python
+analyzer = MAZScoreAnalyzer(ticker="AAPL")
+
+# Customize analysis steps
+analyzer.fetch_price_data(period="1y")
+analyzer.calculate_ma()
+analyzer.calculate_z_score()
+analyzer.detect_divergences(lbR=15, lbL=15)
+analyzer.plot_analysis()
+plt.show()
+```
+
+## ⚙️ Configuration Options
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| ticker | Trading symbol | Required |
+| ma_type | Moving average type (SMA/Hull/Ema/Wma) | "SMA" |
+| period | MA calculation period | 30 |
+| z_score_lookback | Z-Score lookback period | 30 |
+
+## 📊 Output
+
+The analysis generates a two-panel plot:
+1. Price chart with moving average (log scale)
+2. Z-Score histogram with divergence indicators
+
+## 🔍 Technical Details
+
+### Moving Average Types
+- **SMA**: Simple Moving Average
+- **Hull**: Hull Moving Average
+- **EMA**: Exponential Moving Average
+- **WMA**: Weighted Moving Average
+
+### Z-Score Calculation
+The Z-Score is calculated as:
+```python
+Z = (Value - Mean) / Standard_Deviation
+```
+
+### Divergence Detection
+Detects both bullish and bearish divergences using local extrema comparison.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- `yfinance` for market data access
+- Technical Analysis community for insights
+
+## 📧 Contact
+
+Your Name - [akbay.yavuz@gmail.com](mailto:akbay.yavuz@gmail.com)
+
+Project Link: [https://github.com/YavuzAkbay/K-Means-Clustering](https://github.com/YavuzAkbay/K-Means-Clustering)
+
+---
+⭐️ If you found this project helpful, please consider giving it a star!
