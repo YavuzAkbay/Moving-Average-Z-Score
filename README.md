@@ -22,7 +22,7 @@ Before running the script, ensure you have Python 3.7+ installed on your system.
 1. Clone the repository
 ```bash
 git clone https://github.com/YavuzAkbay/moving-average-z-score.git
-cd ma-zscore-analysis
+cd moving-average-z-score
 ```
 
 2. Install required packages
@@ -34,7 +34,7 @@ pip install -r requirements.txt
 
 Basic usage:
 ```python
-from ma_zscore_analysis import MAZScoreAnalyzer
+from moving-average-z-score import MAZScoreAnalyzer
 
 # Create analyzer instance
 analyzer = MAZScoreAnalyzer(
