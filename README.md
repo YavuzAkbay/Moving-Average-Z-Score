@@ -21,7 +21,7 @@ Before running the script, ensure you have Python 3.7+ installed on your system.
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/ma-zscore-analysis.git
+git clone https://github.com/YavuzAkbay/moving-average-z-score.git
 cd ma-zscore-analysis
 ```
 
